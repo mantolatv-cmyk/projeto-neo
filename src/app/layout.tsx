@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Montserrat, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from './context/ThemeContext';
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-montserrat',
   display: 'swap',
 });
 
@@ -26,8 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="bg-[#F5F5F1] text-[#18181B] dark:bg-[#18181B] dark:text-[#F5F5F1] font-inter antialiased transition-colors duration-700 selection:bg-[#FBBF24] selection:text-[#18181B]">
+    <html lang="pt-BR" className={`${montserrat.variable} ${playfair.variable}`}>
+      <body className="bg-neo-pearl text-neo-charcoal font-montserrat antialiased transition-colors duration-700 selection:bg-neo-gold selection:text-neo-pearl">
         <ThemeProvider>
           {children}
         </ThemeProvider>

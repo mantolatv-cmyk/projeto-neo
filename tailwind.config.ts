@@ -10,6 +10,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        neo: {
+          greige: "#D7D3C8",
+          pearl: "#FDFBF7",
+          gold: "#C5A880",
+          charcoal: "#282828",
+        },
         residence: {
           offwhite: "#F5F5F1",
           zinc: "#18181B",
@@ -18,7 +24,12 @@ const config: Config = {
       },
       fontFamily: {
         playfair: ["var(--font-playfair)", "serif"],
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
+      },
+      boxShadow: {
+        'soft': '0 10px 40px -10px rgba(0,0,0,0.06)',
+        'soft-gold': '0 10px 40px -10px rgba(197,168,128,0.15)',
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
