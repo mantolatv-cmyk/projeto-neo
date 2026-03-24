@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body.dark {
+    @apply bg-residence-zinc text-residence-offwhite;
+  }
+}
+
+@layer components {
+  /* Dynamic glow based on interaction */
+  .glow-section {
+    @apply transition-all duration-700;
+  }
+
+  body.dark .glow-section {
+    box-shadow: 0 0 100px -20px rgba(251, 191, 36, 0.15);
+    filter: brightness(1.1) drop-shadow(0 0 10px rgba(251, 191, 36, 0.05));
+  }
+  
+  .luxury-heading {
+    @apply font-playfair tracking-tight;
+  }
+  
+  .residence-btn {
+    @apply inline-flex items-center gap-2 px-8 py-4 border border-residence-zinc text-residence-zinc font-medium transition-all duration-300 hover:bg-residence-zinc hover:text-residence-offwhite dark:border-residence-offwhite dark:text-residence-offwhite dark:hover:bg-residence-offwhite dark:hover:text-residence-zinc;
+  }
+}
+
+/* Parallax effect helper (alternative to Framer Motion if needed) */
+.parallax-bg {
+  transform: translateZ(0); /* Optimize for GPU */
+}
+
+/* Custom scrollbar for premium look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F5F1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #18181B;
+}
+
+/* Hotspot animation */
+.pulse-circle {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.4);
+    transform: scale(1);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(251, 191, 36, 0);
+    transform: scale(1.1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
+    transform: scale(1);
+  }
+}
